@@ -1,0 +1,25 @@
+name: ExtraTeritory
+version: 1.0.0
+main: dev.itzabood69.extrateritory.ExtraTeritory
+api-version: 1.21
+author: ItzAbood69
+description: A competitive PvP survival plugin built around three dimensions — Overworld, Nether, and End.
+load: STARTUP
+
+commands:
+  territory:
+    description: Main ExtraTeritory command hub
+    usage: /territory <subcommand>
+    permission: extrateritory.use
+    aliases: [et]
+
+permissions:
+  extrateritory.use:
+    description: Access to basic territory commands
+    default: true
+  extrateritory.admin:
+    description: Access to all admin territory commands
+    default: op
+  extrateritory.bypass:
+    description: Bypasses dimension debuffs and PvP restrictions
+    default: op

@@ -1,0 +1,139 @@
+# ╔══════════════════════════════════════════════╗
+# ║         ExtraTeritory Configuration          ║
+# ║              by ItzAbood69                   ║
+# ╚══════════════════════════════════════════════╝
+
+# Prefix shown in all plugin messages
+prefix: "&8[&6ExtraTeritory&8]&r "
+
+# Fixed spawn coordinates per dimension (set after world generation)
+spawns:
+  overworld:
+    world: "world"
+    x: 0.5
+    y: 64.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+  nether:
+    world: "world_nether"
+    x: 0.5
+    y: 64.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+  end:
+    world: "world_the_end"
+    x: 0.5
+    y: 64.0
+    z: 0.5
+    yaw: 0.0
+    pitch: 0.0
+
+# How many PvP deaths before a player is banned
+pvp-deaths-until-ban: 10
+
+# ── Ability Settings ──────────────────────────────────────────────────────────
+# Which key activates the dimension ability.
+# Options:
+#   F            — Swap-hand key (default, vanilla F key)
+#   SHIFT        — Sneak toggle (press Shift)
+#   RIGHT_CLICK  — Shift + Right Click
+#   LEFT_CLICK   — Shift + Left Click
+ability-activation-key: F
+
+# Ability cooldown in seconds
+ability-cooldown: 60
+
+# Ability duration in seconds (used by Nether and End abilities)
+ability-duration: 10
+
+# Overworld — Ground Dash settings
+ability-overworld-dash-distance: 10.0
+ability-overworld-dash-break-blocks: true
+
+# Nether — Magma Walk settings
+ability-nether-magma-duration: 10
+
+# End — Void Blink settings
+ability-end-blink-max-distance: 20.0
+
+# ── Structure Rarity ─────────────────────────────────────────────────────────
+# Value = 1 in N chunks chance of spawning. Lower = rarer.
+structures:
+  # ── Overworld ──────────────────────────────────────────────────────────────
+  settler-cabin-rarity: 180
+  ancient-well-rarity: 200
+  ruined-watchtower-rarity: 190
+  druid-stone-circle-rarity: 220
+  bandit-camp-rarity: 170
+  overworld-village-rarity: 400   # villages are rare — only 1 per ~400 chunks
+
+  # ── Nether ─────────────────────────────────────────────────────────────────
+  ash-shrine-rarity: 160
+  blaze-altar-rarity: 190
+  wither-shrine-rarity: 200
+  basalt-fortress-rarity: 210
+  crimson-hut-rarity: 175
+  soul-crypt-rarity: 185
+  nether-village-rarity: 420
+
+  # ── End ────────────────────────────────────────────────────────────────────
+  void-ruin-rarity: 170
+  chorus-spire-rarity: 180
+  shulker-vault-rarity: 200
+  obsidian-obelisk-rarity: 190
+  crystal-sanctum-rarity: 210
+  ender-tomb-rarity: 220
+  void-beacon-rarity: 230
+  end-village-rarity: 440
+
+# Maximum health reduction (in hearts) when entering a foreign dimension
+# 10.0 = 5 hearts (half max health)
+foreign-dimension-max-health: 10.0
+
+# ── Debuffs ──────────────────────────────────────────────────────────────────
+# Applied per dimension to non-members.
+# NOTE: POISON in the nether is automatically skipped if the player's
+#       health is already at or below the foreign-dimension-max-health cap.
+debuffs:
+  nether:
+    - "POISON:1"
+  end:
+    - "WEAKNESS:1"
+  overworld:
+    - "SLOW:1"
+
+# Tab-list prefix colors per dimension
+tab-colors:
+  overworld: "&a[Overworld]&r "
+  nether: "&c[Nether]&r "
+  end: "&5[End]&r "
+
+# Heart item material for each dimension
+heart-items:
+  overworld: LIME_DYE
+  nether: RED_DYE
+  end: PURPLE_DYE
+
+# ── Messages ──────────────────────────────────────────────────────────────────
+messages:
+  no-permission: "&cYou don't have permission to do that."
+  unknown-command: "&cUnknown subcommand. Use &e/territory help &cfor help."
+  dimension-set: "&aPlayer &e{player}&a has been moved to the &e{dimension}&a dimension."
+  dimension-set-self: "&aYour dimension has been changed to &e{dimension}&a."
+  same-dimension-pvp: "&cYou cannot attack players in your own dimension!"
+  tpa-blocked: "&cTeleportation to other dimensions is not allowed."
+  ability-activated: "&aAbility activated!"
+  ability-cooldown: "&cAbility is on cooldown! &e{time}s &cremaining."
+  heart-received: "&aYou received a &e{dimension} Heart&a! Carry it to gain immunity."
+  heart-immunity: "&aYou are now immune to &e{dimension}&a debuffs."
+  foreign-debuff: "&cWarning! You are in a foreign dimension — debuffs applied."
+  pvp-deaths-warning: "&cDanger! You have &e{deaths}/10 &cPvP deaths. 10 = permanent ban."
+  player-banned: "&4{player} &chas been banned after 10 PvP deaths."
+  player-revived: "&a{player} &ahas been revived!"
+  spawn-set: "&aSpawn for &e{dimension}&a has been set."
+  invalid-dimension: "&cInvalid dimension. Use: &eoverworld&c, &enether&c, or &eend&c."
+  player-not-found: "&cPlayer not found."
+  locate-found: "&aNearest &e{type}&a &6{name}&a is at &eX:{x} Y:{y} Z:{z}&a."
+  locate-not-found: "&cNo &e{type}&a named &6{name}&a was found nearby."
